@@ -30,7 +30,7 @@
         {
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeCalender = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,12 +55,12 @@
             this.txtAmount.TabIndex = 4;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
-            // dateTimePicker1
+            // dateTimeCalender
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(93, 86);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(241, 23);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dateTimeCalender.Location = new System.Drawing.Point(93, 86);
+            this.dateTimeCalender.Name = "dateTimeCalender";
+            this.dateTimeCalender.Size = new System.Drawing.Size(241, 23);
+            this.dateTimeCalender.TabIndex = 8;
             // 
             // label1
             // 
@@ -105,6 +105,7 @@
             this.btnPrint.TabIndex = 14;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnClear
             // 
@@ -115,6 +116,7 @@
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Form1
             // 
@@ -127,7 +129,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimeCalender);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtName);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,7 +147,7 @@
         #endregion
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtAmount;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeCalender;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

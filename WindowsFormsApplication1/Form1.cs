@@ -15,6 +15,10 @@ Add Trapping
 Input the centavo in 1 blank
 Confirm the process for centavos
 Setup printer task!
+
+
+https://pastebin.com/zNSxW4VN
+https://msdn.microsoft.com/en-us/library/6he9hz8c(v=vs.110).aspx
 */
 
 
@@ -216,5 +220,67 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+
+            PrintDocument printDocument = new PrintDocument();
+
+            
+            printDocument.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("PaperA4", 250, 110);
+
+            printDialog.Document = printDocument; //add the document to the dialog box...        
+
+            printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateCheque); //add an event handler that will do the printing
+
+            //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+
+            DialogResult result = printDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                printDocument.Print();
+
+            }
+        }
+        private void CreateCheque(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+            string name = txtName.Text;
+            string amount = txtAmount.Text;
+            string stramount = txtStrAmount.Text;
+            string date = dateTimeCalender.Value.ToString("MM/dd/yyyy");
+
+            Graphics graphic = e.Graphics;
+
+            Font font = new Font("Courier New", 12); 
+
+            float fontHeight = font.GetHeight();
+
+
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+
+            graphic.DrawString(date, new Font("Courier New", 18), new SolidBrush(Color.Black), startX, startY);
+            offset += 15;
+            graphic.DrawString(name, font, new SolidBrush(Color.Black), startX, startY + offset);
+            startX += 450;
+
+            graphic.DrawString(amount, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += 15;
+            graphic.DrawString(stramount, font, new SolidBrush(Color.Black), startX, startY + offset);
+
+            offset = offset + (int)fontHeight; //make the spacing consistent
+            graphic.DrawString("----------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 5; //make the spacing consistent
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtName.Clear();
+            txtAmount.Clear();
+            txtStrAmount.Clear();
+        }
     }
 }
