@@ -37,6 +37,8 @@
             this.txtStrAmount = new System.Windows.Forms.TextBox();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnPreview = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtName
@@ -110,7 +112,7 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.Silver;
-            this.btnClear.Location = new System.Drawing.Point(203, 259);
+            this.btnClear.Location = new System.Drawing.Point(293, 259);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(94, 42);
             this.btnClear.TabIndex = 15;
@@ -118,11 +120,37 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnPreview
+            // 
+            this.btnPreview.BackColor = System.Drawing.Color.Silver;
+            this.btnPreview.Location = new System.Drawing.Point(193, 259);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(94, 42);
+            this.btnPreview.TabIndex = 16;
+            this.btnPreview.Text = "Preview";
+            this.btnPreview.UseVisualStyleBackColor = false;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Silver;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnExit.Location = new System.Drawing.Point(686, 259);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(94, 42);
+            this.btnExit.TabIndex = 17;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(859, 329);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.txtStrAmount);
@@ -154,6 +182,8 @@
         private System.Windows.Forms.TextBox txtStrAmount;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnPreview;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

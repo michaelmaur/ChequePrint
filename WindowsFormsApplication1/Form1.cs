@@ -282,5 +282,15 @@ namespace WindowsFormsApplication1
             txtAmount.Clear();
             txtStrAmount.Clear();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
